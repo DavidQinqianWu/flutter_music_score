@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'draw_core/draw_util.dart';
-import 'package:flutterapp/draw_core/symbol_data.dart';
+import 'draw_core/draw_uitl/draw_util.dart';
 import 'package:flutterapp/draw_core/music_font/music_font.dart';
 
 class WQQ extends CustomPainter {
@@ -13,12 +12,13 @@ class WQQ extends CustomPainter {
       ..color = Colors.black;
 
     Path myPath = Path();
-    SymbolData drawSymbol = SymbolData.fromSymbol(MusicFont.sharp);
+    List<String> path =
+        DrawUtil.readFromSymbol(fontName: MusicFont.noteHeadSolid);
     DrawUtil.setPath(
-      pathFromSymbol: drawSymbol.path,
+      pathFromSymbol: path,
       path: myPath,
-      originX: 100,
-      originY: 100,
+      originX: 150,
+      originY: 200,
       zoom: 0.1,
     );
 

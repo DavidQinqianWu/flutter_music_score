@@ -5,6 +5,13 @@ import 'package:flutter/cupertino.dart';
 
 /// [DrawUtil]  Draw util, the mainly is for flutter to draw easily
 class DrawUtil {
+  /// 直接从 [readFromSymbol] 表里面 读取里面的数据, 然后进行转换
+  static List<String> readFromSymbol({Map fontName}) {
+    // 绘画数据的 path
+    List<String> path = (fontName['o'] as String)?.split(' ');
+    return path;
+  }
+
   ///[yymRotate] clockwise to rotate, which will automatically change the angle, and rotate center point don't need to
   ///consider, base on this function
   ///[size] from the Size that on your [CustomPainter]
@@ -126,7 +133,7 @@ class DrawUtil {
                   numberStrY: pathFromSymbol[i + 4],
                   zoom: zoom,
                   origin: originY,
-              zoomY: zoomY),
+                  zoomY: zoomY),
               DrawUtil.setXPath(
                   numberStrX: pathFromSymbol[i + 1],
                   zoom: zoom,
